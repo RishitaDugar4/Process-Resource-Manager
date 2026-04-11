@@ -2,7 +2,7 @@
 
 A simulation of a process and resource manager using PCBs (Process Control Blocks) and RCBs (Resource Control Blocks), implementing a multilevel priority-based scheduler.
 
-## How to Compile
+## To Compile
 
 ```bash
 g++ -std=c++17 manager.cpp -o manager
@@ -12,9 +12,9 @@ Make sure `manager.cpp` and `manager.hpp` are in the same directory before compi
 
 ---
 
-## How to Run
+## To Run
 
-### Interactive (terminal input)
+### Run with Interactive (terminal input)
 
 ```bash
 ./manager
@@ -30,7 +30,7 @@ to
 
 Press `Ctrl+D` to exit.
 
-### From an input file
+### Run from an Input File
 
 ```bash
 ./manager input.txt
@@ -40,7 +40,7 @@ Where `input.txt` has one command per line. An empty line triggers a new `init`.
 
 ---
 
-## Commands
+## Supported Commands
 
 | Command | Description |
 |--------|-------------|
@@ -55,7 +55,7 @@ Resources are indexed 0–3 with inventories of 1, 1, 2, and 3 units respectivel
 
 ---
 
-## How to Compare Output Against a Sample
+## Compare Output Against a Expected (file)
 
 Save your program's output to a file, then diff it against the expected output:
 
@@ -68,7 +68,7 @@ If `diff` produces no output, your output matches exactly. Any differences will 
 
 ---
 
-## Example
+## EXAMPLE
 
 **input.txt**
 ```
