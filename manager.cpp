@@ -298,7 +298,6 @@ void run_shell(std::istream& in) {
         }
 
         if (input.empty()) {
-            init(); 
             continue;
         }
 
@@ -328,10 +327,10 @@ void run_shell(std::istream& in) {
             } else if (cmd == "to") {
                 timeout();
             } else {
-                std::cout << "error\n";
+                std::cout << "-1";
             }
         } catch (...) {
-            std::cout << "error\n";
+            std::cout << "-1";
         }
     }
 }
