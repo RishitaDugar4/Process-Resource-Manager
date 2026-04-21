@@ -13,7 +13,7 @@ int running = -1;
 void create(int priority) {
     //input handling
     if ( priority < 0 || priority > NUM_PRIORITIES ) {
-        std::cout << "error\n";
+        std::cout << "-1";
         return;
     }
     
@@ -28,7 +28,7 @@ void create(int priority) {
 
     //if no spots open (ie all 16 processes filled) break
     if ( j == -1 ) { 
-        std::cout << "error\n";
+        std::cout << "-1";
         return;
     }
 
@@ -121,7 +121,7 @@ void destroy_recursive(int pid) {
 void destroy(int pid) {
     //input handling
     if (pid < 0 || pid >= NUM_PROCESSES || PCBs[pid].state == ProcessState::FREE) {
-        std::cout << "error\n";
+        std::cout << "-1";
         return;
     }
 
@@ -132,7 +132,7 @@ void destroy(int pid) {
     }
     //if process is not running, can't delete non-running process
     if (ancestor == -1) {
-        std::cout << "error\n";
+        std::cout << "-1";
         return;
     }
 
@@ -143,7 +143,7 @@ void destroy(int pid) {
 void request(int rid, int units) {
     //input handling
     if (rid < 0 || rid >= NUM_RESOURCES || units <= 0 || units > RCBs[rid].inventory || running == -1) {
-        std::cout << "error\n";
+        std::cout << "-1";
         return;
     }
 
@@ -162,7 +162,7 @@ void request(int rid, int units) {
 void release(int rid, int units) {
     //input handling
     if (rid < 0 || rid >= NUM_RESOURCES || units <= 0 || units > RCBs[rid].inventory || running == -1) {
-        std::cout << "error\n";
+        std::cout << "-1";
         return;
     }
 
@@ -222,7 +222,7 @@ void release(int rid, int units) {
 void timeout() {
     //if no process running, can't timeout
     if (running == -1) {
-        std::cout << "error\n";
+        std::cout << "-1";
         return;
     }
 
